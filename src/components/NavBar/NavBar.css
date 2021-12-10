@@ -1,0 +1,36 @@
+.navbar-container {
+    padding: 0 73.5px 0 73.5px;
+    background-color: #fff159;
+    border: 0;
+    position: relative;
+    height: 56px;
+}
+
+.navbar-logo {
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.2/mercadolibre/logo__large_plus.png);
+    height: 34px;
+    top: 11px;
+    width: 134px;
+}
+
+.navbar-search {
+    width: 400px;
+    height: 35px;
+}
+
+.navbar-form-button {
+    height: 46px;
+    width: 39px;
+    background-color: white;
+    color: white;
+}
+
+.navbar-form-button:focus {
+    -webkit-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+    width: 46px;
+    border: 0 rgba(0,0,0,.2);
+    background-color: #fff;
+    top: 8px;
+    right: 1px;
+}
