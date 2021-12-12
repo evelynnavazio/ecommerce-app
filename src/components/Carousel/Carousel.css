@@ -1,0 +1,12 @@
+.carousel-container {
+    display: inline;
+    width: 100vh;
+    height: 30vh;
+    position: absolute;
+
+}
+
+.carousel-container img {
+    width: 100vh;
+    height: 30vh;
+}
