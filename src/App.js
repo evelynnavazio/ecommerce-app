@@ -11,14 +11,14 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 function App() {
   return (
     <>
+      <Search />
+      <NavBar />
+      <Carousele />
       <BrowserRouter>
-        <Search />
-        <NavBar />
-        <Carousele />
         <Routes>
           <Route exact path="/" element={<ItemListContainer />} />
-          <Route path="/item:id" element={<ItemDetailContainer />} />
         </Routes>
+        <ItemDetailContainer />
         <Footer />
       </BrowserRouter>
     </>
