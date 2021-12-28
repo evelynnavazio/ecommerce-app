@@ -1,9 +1,11 @@
-.navbar-container {
+.navbar-container-color {
     padding: 0 73.5px 0 73.5px;
     background-color: #fff159;
     border: 0;
     position: relative;
-    height: 56px;
+    height: 50px;
+    font-size: 14px;
+    line-height: 22px;
 }
 
 .navbar-logo {

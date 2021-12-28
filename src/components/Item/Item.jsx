@@ -1,21 +1,18 @@
-import React,{Fragment} from 'react'
-import { Card, Button} from 'react-bootstrap';
+import React from "react";
+import { Card } from "react-bootstrap";
 
 function Item(item) {
-    return (
-        <Fragment>
-            
-          <Card style={{ width: '15rem' }}>
-            <Card.Img variant="top" src={item.image}/>
-            <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>
-                        ${item.price}
-                    </Card.Text>
-                    <Button variant="primary">Comprar</Button>
-            </Card.Body>
-            </Card>  
-        </Fragment>
-    )};
+  return (
+    <>
+      <Card className="card-container col-md-2 mb-5">
+        <Card.Img variant="top" src={item.image} />
+        <Card.Body>
+          <Card.Title>{item.name}</Card.Title>
+          <Card.Text>${item.price}</Card.Text>
+        </Card.Body>
+      </Card>
+    </>
+  );
+}
 
-export default Item
+export default Item;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Products from '../../Products.json'
+import Products from "../../Products.json";
 import Loader from "react-loader-spinner";
 //--COMPONENTES--//
 import Item from "../Item/Item";
@@ -12,9 +12,8 @@ const ItemList = () => {
     const response = await new Promise((resolve, reject) => {
       setTimeout(function () {
         resolve(Products);
-      }, 2 * 1000);
+      }, 2000);
     });
-console.log(response)
     return response;
   };
 
@@ -29,14 +28,21 @@ console.log(response)
     getItems();
   }, []);
 
-
   return (
     <>
-      {items.map(item => {
-        return <Item key={item.id} item={item} name={item.name} image={item.image} price={item.price} />;
+      {items.map((item) => {
+        return (
+          <Item
+            key={item.id}
+            item={item}
+            name={item.name}
+            image={item.image}
+            price={item.price}
+          />
+        );
       })}
       {isLoading && (
-        <Loader type="TailSpin" color="#CCFF44" height={40} width={40} />
+        <Loader type="TailSpin" color="#CCFF44" height={40} width={50} />
       )}
     </>
   );

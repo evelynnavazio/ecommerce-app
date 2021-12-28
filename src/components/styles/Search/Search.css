@@ -1,0 +1,21 @@
+.search-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 73.5px 0 73.5px;
+    background-color: #fff159;
+    border: 0;
+    height: 45px;
+}
+
+.search-logo {
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.2/mercadolibre/logo__large_plus.png);
+    height: 34px;
+    top: 11px;
+    width: 134px;
+}
+
+.search-search {
+    width: 400px;
+    height: 35px;
+}
