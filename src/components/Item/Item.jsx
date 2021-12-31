@@ -1,19 +1,21 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-function Item({ items }) {
+function Item({ name, id, category, image, price }) {
   return (
     <>
-      {items.map(item =>
+      <Link to={`/product/${id}`}>
+
         <Card className="card-container col-md-2 mb-5">
-          <Card.Img variant="top" src={item.image} />
+          <Card.Img variant="top" src={image} />
           <Card.Body>
-            <Card.Title>{item.name}</Card.Title>
-            <Card.Text>${item.price}</Card.Text>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>${price}</Card.Text>
           </Card.Body>
         </Card>
-     )
-    }
+        
+      </Link>
     </>
   );
 }

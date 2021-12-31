@@ -1,4 +1,4 @@
-const items = [
+const data = [
   {
     id: "1",
     type: "Suplementos nacionales",
@@ -81,24 +81,3 @@ const items = [
   },
 ];
 
-export const loadItems = new Promise((res, rej) => {
-  let uno = "1";
-  if (uno === "1") {
-    setTimeout(() => {
-      res(items);
-    }, 2000);
-  } else {
-    rej("incoveniente al cargar");
-  }
-});
-
-const Agua = {
-    name: "Goldenseal Herb Pharm 30ml",
-    price: 850
-}
-
-export const getDetail = new Promise((res) => {
-  setTimeout(() => {
-    res(Agua);
-  }, 2000);
-});
