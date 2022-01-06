@@ -1,14 +1,25 @@
 import React from "react";
 import "./ItemDetail.css";
-import { Container } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 
 function ItemDetail({item}) {
+  console.log(item)
   return (
-    <Container>
-      <p>{item.name}</p>
-      <p>{item.id}</p>
-      <p>{item.price} </p>
-    </Container>
+    <>
+      {item.map(item=>
+        <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={item.image} />
+        <Card.Body>
+          <Card.Title>{item.name}</Card.Title>
+          <Card.Text>{item.id}
+          {item.price}
+          </Card.Text>
+          <Button variant="primary">Comprar</Button>
+        </Card.Body>
+      </Card>
+        )
+      }
+    </>
   );
 }
 

@@ -24,6 +24,11 @@ const items = [
     src: 'https://http2.mlstatic.com/D_NQ_989068-MLA48493641626_122021-OO.webp',
     altText: '',
     caption: ''
+  },
+  {
+    src: 'https://http2.mlstatic.com/D_NQ_939113-MLA48624188143_122021-OO.webp',
+    altText: '',
+    caption: ''
   }
 ];
 

@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 
 
@@ -20,7 +21,7 @@ export default function NavBar() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Supermercado</Nav.Link>
+              <Nav.Link >Supermercado</Nav.Link>
               <Nav.Link href="#action2">Ofertas</Nav.Link>
               <Nav.Link href="#action2">Moda</Nav.Link>
               <Nav.Link href="#action2">Ayuda</Nav.Link>

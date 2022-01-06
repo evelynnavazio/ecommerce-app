@@ -79,5 +79,32 @@ const data = [
     price: 850,
     stock: 3,
   },
+  {
+    id: "9",
+    type: "Suplementos importados",
+    image:
+      "https://www.ecotienda.pe/wp-content/uploads/2021/11/Calcio-con-Vitamina-D-3-en-polvo-Kirkman-227g.jpg",
+    name: "Calcio con Vitamina D-3 en polvo Kirkman 227g",
+    description: "descripcion del producto elegido",
+    price: 1000,
+    stock: 4,
+  },
+  {
+    id: "10",
+    type: "Suplementos importados",
+    image:
+      "https://www.ecotienda.pe/wp-content/uploads/2021/10/Goldenseal-Herb-Pharm-30ml.jpg",
+    name: "Goldenseal Herb Pharm 30ml",
+    description: "descripcion del producto elegido",
+    price: 850,
+    stock: 3,
+  },
 ];
+
+export const getData = new Promise ((res)=>{
+  let uno = 1
+  if(uno === 1){
+    res(data)
+  }
+})
 

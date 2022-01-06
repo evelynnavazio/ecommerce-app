@@ -1,45 +1,42 @@
 .navbar-container-color {
-    padding-bottom: 2em;
-    padding-left: 25em;
-    background-color: #fff159;
-    border: 0;
-    position: relative;
-    height: 45px;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 22px;
-    -webkit-box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
-    box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  padding-bottom: 2em;
+  padding-left: 25em;
+  background-color: #fff159;
+  border: 0;
+  position: relative;
+  height: 45px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  -webkit-box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
 }
 
-
-
-
 .navbar-logo {
-    background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.2/mercadolibre/logo__large_plus.png);
-    height: 34px;
-    top: 11px;
-    width: 134px;
+  background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.2/mercadolibre/logo__large_plus.png);
+  height: 34px;
+  top: 11px;
+  width: 134px;
 }
 
 .navbar-search {
-    width: 400px;
-    height: 35px;
+  width: 400px;
+  height: 35px;
 }
 
 .navbar-form-button {
-    height: 46px;
-    width: 39px;
-    background-color: white;
-    color: white;
+  height: 46px;
+  width: 39px;
+  background-color: white;
+  color: white;
 }
 
 .navbar-form-button:focus {
-    -webkit-border-radius: 0 2px 2px 0;
-    border-radius: 0 2px 2px 0;
-    width: 46px;
-    border: 0 rgba(0,0,0,.2);
-    background-color: #fff;
-    top: 8px;
-    right: 1px;
+  -webkit-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  width: 46px;
+  border: 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  top: 5px;
+  right: 1px;
 }
