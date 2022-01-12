@@ -1,10 +1,14 @@
 .card-container {
-    width: 220px;
-    height: 330px;
-    text-decoration: none;
-    color: black;
+    width: 210px;
+    height: 300px;
+    font-size: 14px;
+    margin: 10px 10px;
+    padding: 10px 10px;
 }
 
 .item-title-price {
-
+    color: black;
+    list-style: none;
+    text-decoration: none;
+    
 }

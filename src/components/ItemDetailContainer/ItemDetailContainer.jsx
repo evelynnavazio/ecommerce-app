@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getData } from "../../Products";
-//import Loader from "react-loader-spinner";
+import Loader from "react-loader-spinner";
+import { Container } from "react-bootstrap"
+import "./ItemDetailContainer.css"
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 function ItemDetailContainer({ greeting }) {
@@ -10,6 +12,10 @@ function ItemDetailContainer({ greeting }) {
 
   const { catId } = useParams();
   
+  useEffect(() => {
+    document.title = "Detalle del producto"
+ }, []);
+
   useEffect(() => {
       getData
       .then((item)=>{
@@ -26,8 +32,12 @@ function ItemDetailContainer({ greeting }) {
 
   return (
     <>
-      <h3 style={{ textAlign: "center" }}>{greeting}</h3>
-      { loading ? <h2>Cargando...</h2> : <ItemDetail item={item} />}
+      <h3 className="item-detail-container-titulo">{greeting}</h3>
+      { loading ? <Loader>Cargando...</Loader> : 
+      <Container className="item-detail-container">
+      <ItemDetail  item={item} />
+      </Container>
+      }
     </>
   );
 }

@@ -1,7 +1,7 @@
 .container-item-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 5px;
+
   grid-auto-rows: minmax(50px, auto);
   height: auto;
   margin-left: 75.5px;

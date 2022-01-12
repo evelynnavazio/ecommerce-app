@@ -1,34 +1,36 @@
-import React,{useState} from 'react'
-import './ItemCount.css'
+import React, { useState } from "react";
+import "./ItemCount.css";
+import { Button } from 'react-bootstrap'
 
-function ItemCount({stock, initial, onAdd}) {
-    const [count, setCount] = useState(initial);
+function ItemCount({ stock, initial, onAdd }) {
+  const [counter, setCounter] = useState(initial);
 
-    const add = () => {
-    if(stock > 0 && (count < stock)){
-        setCount(count + 1);
+  const add = () => {
+    if (stock > 0 && counter < stock) {
+      setCounter(counter + 1);
     }
-};
-    const rest = () => {
-        if (count > 1){
-            setCount(count - 1 )
-        }
+  };
+  const rest = () => {
+    if (counter > 1) {
+      setCounter(counter - 1);
     }
+  };
 
-    const itemToCart = (onAdd) => {
-        alert(`compraste ` + 
-            count + ` articulos`)
-    }
-    return (
+  return (
     <>
-        <div className='container-item-count'>
-           <button onClick={rest}><i className="fas fa-minus"></i></button> 
-                <p>{count}</p>
-           <button onClick={add}><i className="fas fa-plus"></i></button> 
-        </div>
-        <button type="button"  onClick={itemToCart} className='item-count-button'>Añadir al carrito</button>
+      <div className="container-item-count">
+        <button onClick={rest}>
+          <i className="fas fa-minus"></i>
+        </button>
+        <p>{counter}</p>
+        <button onClick={add}>
+          <i className="fas fa-plus"></i>
+        </button>
+      </div>
+      <Button className="btn" type="button" onClick={() => onAdd(counter)}>Agregar al Carrito</Button>
+
     </>
-    )
+  );
 }
 
-export default ItemCount
+export default ItemCount;

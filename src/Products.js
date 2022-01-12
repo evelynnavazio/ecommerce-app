@@ -108,3 +108,5 @@ export const getData = new Promise ((res)=>{
   }
 })
 
+
+

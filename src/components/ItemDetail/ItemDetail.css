@@ -1,11 +1,8 @@
-.item-detail-container {
-    width: 100%;
-    height: 500px;
-    background-color: rgb(24, 119, 88);
-}
+
 
 .item-detail-img {
     background-color: black;
     width: 200px;
     height: 250px;
+   
 }

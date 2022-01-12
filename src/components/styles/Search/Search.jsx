@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Search.css";
 import logo_ml from "../../../images/logo_ml.png";
 import { Form, FormControl } from "react-bootstrap";
@@ -9,11 +9,11 @@ function Search() {
     <>
       <div className="search-container">
         <div className="search-logo">
-          <BrowserRouter>
+        
             <NavLink as={NavLink} to="/" exact="true" className='nav.link'>
               <img src={logo_ml} className="search-logo" alt="logo" />
             </NavLink>
-          </BrowserRouter>
+      
         </div>
         <div>
           <Form className=" search-search">

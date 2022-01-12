@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
+import Loader from "react-loader-spinner";
 import { getData } from "../../Products";
 import './ItemListContainer.css'
 
@@ -10,16 +10,18 @@ function ItemListContainer({ greeting }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    document.title = "Mercado Libre"
+ }, []);
+
+  useEffect(() => {
     getData.then((item) => setItems(item)).finally(() => setLoading(false));
   }, []);
+  
 
   return loading ? (
-    <Spinner animation="border" variant="warning">
-      <span className="visually-hidden">Loading...</span>
-    </Spinner>
+    <Loader></Loader>
   ) : (
     <>
-
       <h3 className="item-list-container-titulo">{greeting}</h3>
       <ItemList items={items} />
     </>

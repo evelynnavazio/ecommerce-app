@@ -21,10 +21,10 @@ export default function NavBar() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link >Supermercado</Nav.Link>
-              <Nav.Link href="#action2">Ofertas</Nav.Link>
-              <Nav.Link href="#action2">Moda</Nav.Link>
-              <Nav.Link href="#action2">Ayuda</Nav.Link>
+              <Nav.Link to='/' >Supermercado</Nav.Link>
+              <Nav.Link to='/'>Ofertas</Nav.Link>
+              <Nav.Link to='/'>Moda</Nav.Link>
+              <Nav.Link to='/'>Ayuda</Nav.Link>
               <NavDropdown title="Categorias" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Categorias</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
