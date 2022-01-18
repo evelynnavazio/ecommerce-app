@@ -24,9 +24,14 @@ function ItemDetail({ item }) {
             {itemsToCart ? (
               <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
             ) : (
+              <>
               <Link to={'/cart'} action="Ir al Carrito" className="btn btn-primary">
                 Ir al carrito
               </Link>
+              <Link to={'/'} action="Ir al home" className="btn btn-primary">
+                Seguir comprando
+              </Link>
+              </>
             )}
           </Card.Body>
         </Card>

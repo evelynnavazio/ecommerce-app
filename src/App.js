@@ -10,10 +10,13 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 //import PaymentData from "./components/styles/PaymentData/PaymentData";
 import Carousele from "./components/styles/Carousel/Carousele";
 import Cart from "./components/Cart/Cart";
+import { CartProvider} from "./context/CartContext.jsx"
+
 
 function App() {
   return (
-    <>
+   
+<CartProvider>
       <BrowserRouter>
         <Search />
         <NavBar />
@@ -32,7 +35,8 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+</CartProvider>
+
   );
 }
 

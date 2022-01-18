@@ -102,6 +102,7 @@ const data = [
 ];
 
 export const getData = new Promise ((res)=>{
+ 
   let uno = 1
   if(uno === 1){
     res(data)
