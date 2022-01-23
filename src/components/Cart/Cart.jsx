@@ -1,25 +1,33 @@
-import React, { useContext } from "react";
 import "./Cart.css";
-import { Container } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
+import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext";
 import ItemCard from "../ItemCard/ItemCard";
 
 function Cart() {
-  const { cart, removeItem, emptyCart, isInCart } = useCartContext();
+  const { cart, cartEmpty } = useCartContext();
 
   return (
     <Container className="cart-container">
-      {cart.length ? <div>algo</div> : ""}
       <div>
-        {cart.length ? 
-          cart.map(prod => 
-          <ItemCard item={prod} key={prod.id} />
-          )
-         : 
-          <p>"esta vacio"</p>
-        }
+        {cart.length ? (
+          cart.map((item) => <ItemCard item={item} key={item.id} />)
+        ) : (
+          <>
+            <p>"esta vacio"</p>
+            {cart.length ? (
+              <button className="btn" onClick={() => cartEmpty()}>
+                vaciar carrito
+              </button>
+            ) : (
+              <Link to={'/'} action="Ir al home" className="btn btn-primary">
+              Seguir comprando
+            </Link>
+            )}
+          </>
+        )}
+        <Button>Terminar compra</Button>
       </div>
-      <div></div>
     </Container>
   );
 }

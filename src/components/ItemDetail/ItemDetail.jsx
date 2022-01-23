@@ -3,19 +3,24 @@ import {Link} from "react-router-dom"
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Card } from "react-bootstrap";
+import { useCartContext } from "../../context/CartContext";
+
 
 function ItemDetail({ item }) {
   const [itemsToCart, setItemsToCart] = useState(true);
 
-  const onAdd = (count) => {
-    alert(`Se agregaron ${count} productos correctamente`);
+  const { addItem } = useCartContext();
+
+  const onAdd = (counter) => {
+    alert(`Se agregaron ${counter} productos correctamente`);
     setItemsToCart(false);
+    addItem({item: item[0], count: counter})
   };
 
   return (
     <>
       {item.map((item) => (
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: "18rem" }} key={item.id}>
           <Card.Img variant="top" src={item.image} />
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>

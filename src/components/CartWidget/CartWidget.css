@@ -1,16 +1,19 @@
+.link-cart-widget {
+    text-decoration: none;
+}
 .icons {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 5em;
 }
 
 .icon-cartwidget {
     color: black;
-    height: 1em;
-    width: 1em;
+
 }
 
 .icon-cartwidget i {
     padding: 1em 1em;
+    height: 2em;
+    width: 2em;
 }

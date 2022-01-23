@@ -37,7 +37,7 @@ function ItemDetailContainer({ greeting }) {
         <TailSpin>Cargando...</TailSpin>
       ) : (
         <Container className="item-detail-container">
-          <ItemDetail item={item} />
+          <ItemDetail item={item} key={item.id}/>
         </Container>
       )}
     </>

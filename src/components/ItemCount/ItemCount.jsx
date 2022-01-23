@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import "./ItemCount.css";
 import { Button } from 'react-bootstrap'
 
-function ItemCount({ stock, initial, onAdd }) {
+function ItemCount({ stock, initial, onAdd}) {
   const [counter, setCounter] = useState(initial);
+
+  const addToCart = () =>{
+    onAdd(counter)
+
+  }
 
   const add = () => {
     if (stock > 0 && counter < stock) {
@@ -27,7 +32,7 @@ function ItemCount({ stock, initial, onAdd }) {
           <i className="fas fa-plus"></i>
         </button>
       </div>
-      <Button className="btn" type="button" onClick={() => onAdd(counter)}>Agregar al Carrito</Button>
+      <Button className="btn" type="button" onClick={addToCart}>Agregar al Carrito</Button>
 
     </>
   );

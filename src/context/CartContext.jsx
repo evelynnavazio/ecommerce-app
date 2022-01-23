@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
 
   const addItem = ({ item }) => {
     if (!cart.includes(item)) {
-      return setCart({ ...cart, item });
+      return setCart( [...cart, item] );
     } else {
       return false;
     }
@@ -29,7 +29,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, emptyCart, isInCart }}
+      value={{ cart, addItem, removeItem, emptyCart, isInCart}}
     >
       {children}
     </CartContext.Provider>

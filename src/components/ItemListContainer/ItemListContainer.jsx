@@ -4,6 +4,7 @@ import { getData } from "../../Products";
 import './ItemListContainer.css'
 
 import ItemList from "../ItemList/ItemList";
+import Carousele from "../styles/Carousel/Carousele"
 
 function ItemListContainer({ greeting }) {
   const [items, setItems] = useState([]);
@@ -22,6 +23,7 @@ function ItemListContainer({ greeting }) {
     <Loader></Loader>
   ) : (
     <>
+         <Carousele />
       <h3 className="item-list-container-titulo">{greeting}</h3>
       <ItemList items={items} />
     </>

@@ -1,25 +1,26 @@
 import React from "react";
 import { useCartContext } from "../../context/CartContext";
 
-import { Card, Button  } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
-function ItemCard({ name, id, category, image, price }) {
-
+function ItemCard({ item }) {
   const {removeItem} = useCartContext();
 
+  console.log(item)
 
-
-
-<Card>
-  <Card.Header></Card.Header>
-  <Card.Body>
-    <Card.Title>{name}</Card.Title>
-    <Card.Text>
-      With supporting text below as a natural lead-in to additional content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
+  return(
+    <Card key={item.id}>
+      <Card.Header></Card.Header>
+      <Card.Body>
+        <Card.Title>Nombre: {item.name}</Card.Title>
+        <Card.Text>
+          Descripcion: {item.description}
+        </Card.Text>
+     
+        <Button type="button" className="btn" onClick={() => removeItem(item.id, item.quantity)}>X</Button>
+      </Card.Body>
+    </Card>
+  ) 
 }
 
 export default ItemCard;

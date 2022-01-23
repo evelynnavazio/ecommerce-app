@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Item.css";
 
-function Item({ name, id, category, image, price }) {
+function Item({ name, id, image, price }) {
   return (
     <>
       <Card className="card-container">

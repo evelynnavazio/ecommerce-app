@@ -1,14 +1,18 @@
-import React from 'react'
-import './CartWidget.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
+import "./CartWidget.css";
+import { useCartContext } from '../../context/CartContext';
 
 export default function CartWidget() {
-    return (
-        <div>
-    <div className="icons">
-        <i className="fas fa-shopping-cart icon-cartwidget"><p>1</p></i>
-        <i className="far fa-heart icon-cartwidget"></i>
-        <i className="fas fa-user-alt icon-cartwidget"></i>
-    </div>
-        </div>
-    )
+    const {cart} = useCartContext();
+  return (
+    <Link to="/Cart" className="link-cart-widget">
+      <div className="icons">
+        <i className="fas fa-shopping-cart icon-cartwidget">
+        {cart.length > 0 && <span>{cart.length}</span>}
+        </i>
+      </div>
+    </Link>
+  );
 }
