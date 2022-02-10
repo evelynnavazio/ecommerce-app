@@ -1,33 +1,49 @@
 import React, { useEffect, useState } from "react";
-import Loader from "react-loader-spinner";
-import { getData } from "../../Products";
 import './ItemListContainer.css'
-
 import ItemList from "../ItemList/ItemList";
-import Carousele from "../styles/Carousel/Carousele"
+import { useParams } from 'react-router-dom';
+import db from './firebase/firebase';
+import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 
-function ItemListContainer({ greeting }) {
+export const ItemListContainer = ({ greeting }) => {
+
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loader, setLoader] = useState(true);
 
-  useEffect(() => {
-    document.title = "Mercado Libre"
- }, []);
+  const { catId } = useParams();
 
-  useEffect(() => {
-    getData.then((item) => setItems(item)).finally(() => setLoading(false));
-  }, []);
+  useEffect(async () => {
+    setLoader(true);
+
+    const myItems = catId ?
+      query(collection(db, 'products'), where('type', '==', catId))
+      /* query(collection(db, 'products'), where('category', '==', categoryId), orderBy("name")) */
+      :
+      collection(db, 'products');
+
+    try {
+      const querySnapshot = await getDocs(myItems)
+
+      console.log(querySnapshot.docs)
+
+      setItems(querySnapshot.docs.map(el => {
+        return { ...el.data(), id: el.id }
+      }))
+    }
+    catch {
+      console.log("SE ROMPIO")
+    }
   
+    setLoader(false)
 
-  return loading ? (
-    <Loader></Loader>
+  }, [catId]);
+
+  return loader ? (
+    <h2>CARGANDO...</h2>
   ) : (
     <>
-         <Carousele />
-      <h3 className="item-list-container-titulo">{greeting}</h3>
+      <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
       <ItemList items={items} />
     </>
   );
-}
-
-export default ItemListContainer;
+};
